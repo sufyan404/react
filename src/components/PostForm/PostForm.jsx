@@ -51,9 +51,9 @@ export default function PostForm({ post }) {
     }
   };
 
-  const slugTransform = useCallback(vlaue => {
-    if (vlaue && typeof vlaue === 'string')
-      return vlaue
+  const slugTransform = useCallback(value => {
+    if (value && typeof vlaue === 'string')
+      return value
         .trim()
         .toLowerCase()
         .replace(/[^a-zA-Z\d\s]+/g, '-')

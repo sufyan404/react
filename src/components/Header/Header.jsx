@@ -3,10 +3,10 @@ import { Container, Logo, LogoutBtn } from '../index';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-// import authService from '../../appwrite/auth';     
+// import authService from '../../appwrite/auth';
 
 function Header() {
-  const authStatus = useSelector(state => state.auth);
+  const authStatus = useSelector(state => state.auth.status);
 
   const navigate = useNavigate();
 
@@ -52,7 +52,7 @@ function Header() {
               item.active ? (
                 <li key={item.name}>
                   <button
-                    onClick={() => navigate(item.slug)}
+                    onClick={() => navigate(item.url)}
                     className='inline-block px-6 py-2 duration-200 hover:bg-blue-200 rounded-full'
                   >
                     {item.name}

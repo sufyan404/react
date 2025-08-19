@@ -54,7 +54,7 @@ export class Services {
 
   async deletePost(slug) {
     try {
-      await this.databases.deletePost(
+      await this.databases.deleteDocument(
         conf.appwriteDatabaseId,
         conf.appwriteCollectionId,
         slug
