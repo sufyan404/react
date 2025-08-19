@@ -52,7 +52,7 @@ export default function PostForm({ post }) {
   };
 
   const slugTransform = useCallback(value => {
-    if (value && typeof vlaue === 'string')
+    if (value && typeof value === 'string')
       return value
         .trim()
         .toLowerCase()

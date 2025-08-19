@@ -74,10 +74,16 @@ function Signup() {
                 })}
               />
               <Input
-                labdl='Password'
+                label='Password'
                 type='password'
-                placeholder='Enter Your Password'
-                {...register('password', { required: true })}
+                placeholder='Enter Your Password (min 8 characters)'
+                {...register('password', {
+                  required: true,
+                  minLength: {
+                    value: 8,
+                    message: 'Password must be at least 8 characters long',
+                  },
+                })}
               />
               <Button type='submit' className='w-full'>
                 Create Account

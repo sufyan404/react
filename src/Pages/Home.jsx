@@ -5,10 +5,9 @@ import { useSelector } from 'react-redux';
 
 function Home() {
   const [posts, setPosts] = useState([]);
-  const authStatus = useSelector(state => state.auth.status); // Get from Redux
+  const authStatus = useSelector(state => state.auth.status);
 
   useEffect(() => {
-    // Only fetch posts if user is authenticated
     if (authStatus) {
       services
         .getPosts()
@@ -20,8 +19,10 @@ function Home() {
         .catch(error => {
           console.log('Error fetching posts:', error);
         });
+    } else {
+      setPosts([]);
     }
-  }, [authStatus]); // Depend on authStatus
+  }, [authStatus]);
 
   if (posts.length === 0) {
     return (

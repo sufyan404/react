@@ -72,7 +72,7 @@ function Login() {
               {...register('password', { required: true })}
             />
             <Button type='submit' className='w-full'>
-              Signup
+              Signin
             </Button>
           </div>
         </form>
