@@ -12,9 +12,8 @@ function LogoutBtn() {
         dispatch(logout());
       })
       .catch(error => {
-        // Handle case where user is already logged out
         console.log('Logout error:', error);
-        dispatch(logout()); // Still update Redux state
+        dispatch(logout());
       });
   };
 

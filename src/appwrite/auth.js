@@ -60,13 +60,11 @@ export class AuthService {
 
   async logout() {
     try {
-      // Check if there's an active session first
       const session = await this.account.getSession('current');
       if (session) {
         return await this.account.deleteSessions();
       }
     } catch (error) {
-      // No active session, that's fine
       console.log('No session to logout from', error);
       return true;
     }
